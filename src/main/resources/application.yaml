@@ -1,0 +1,24 @@
+server:
+  port: 8080
+
+spring:
+  application:
+    version: Customer Service v2.0
+  datasource:
+    url: jdbc:mysql://localhost:3306/db_student
+    username: root
+    password:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    hikari:
+      minimum-idle: 1
+      maximum-pool-size: 5
+      connection-timeout: 20000
+      cachePrepStmts: true
+      prepStmtCacheSize: 250
+      prepStmtCacheSqlLimit: 2048
+      useServerPrepStmts: true
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+
