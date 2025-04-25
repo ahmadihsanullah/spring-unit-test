@@ -27,4 +27,11 @@ public class StudentService {
     public Iterable<Student> findAll(){
         return studentRepository.findAll();
     }
+
+    public void deleteStudent(Long id) {
+        if (!studentRepository.existsById(id)) {
+            throw new StudentNotFoundException("Student with id " + id + " is not exist");
+        }
+        studentRepository.deleteById(id);
+    }
 }
